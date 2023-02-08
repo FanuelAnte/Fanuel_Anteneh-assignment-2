@@ -31,7 +31,7 @@ class AlbumWidget extends StatelessWidget {
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                    Color.fromARGB(206, 55, 55, 55),
+                    Color.fromARGB(235, 41, 48, 48),
                     Color.fromARGB(55, 66, 66, 66)
                   ])),
               height: 200,
@@ -55,7 +55,7 @@ class AlbumWidget extends StatelessWidget {
                     child: Text(albumName,
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            fontSize: 20,
+                            fontSize: 16,
                             color: Colors.white)),
                   ),
                   Padding(
@@ -63,7 +63,7 @@ class AlbumWidget extends StatelessWidget {
                     child: Text(releaseYear,
                         style: TextStyle(
                             fontWeight: FontWeight.w200,
-                            fontSize: 20,
+                            fontSize: 14,
                             color: Color.fromARGB(255, 154, 154, 154))),
                   )
                 ],
