@@ -14,16 +14,59 @@ class AlbumWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Stack(children: [
-        Image.asset(coverImage, width: 200),
+        ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox.fromSize(
+              child: Image.asset(coverImage, width: 200),
+            )),
+        Positioned(
+          bottom: 0,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                    Color.fromARGB(206, 55, 55, 55),
+                    Color.fromARGB(55, 66, 66, 66)
+                  ])),
+              height: 200,
+              width: 200,
+              // color: Color.fromARGB(181, 66, 66, 66),
+            ),
+          ),
+        ),
+        // Image.asset(coverImage, width: 200),
         Positioned(
           left: 20,
           bottom: 20,
           child: Row(
             children: [
               Column(
-                children: [Text(albumName), Text(releaseYear)],
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
+                    child: Text(albumName,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.white)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                    child: Text(releaseYear,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w200,
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 154, 154, 154))),
+                  )
+                ],
               )
             ],
           ),
@@ -32,7 +75,12 @@ class AlbumWidget extends StatelessWidget {
             bottom: 20,
             right: 20,
             child: FloatingActionButton(
-              child: Icon(Icons.play_arrow),
+              backgroundColor: Color.fromARGB(255, 157, 191, 199),
+              child: Icon(
+                Icons.play_arrow,
+                color: Color.fromARGB(255, 51, 62, 63),
+                size: 30,
+              ),
               onPressed: () => {},
             )),
       ]),
